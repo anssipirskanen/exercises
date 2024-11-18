@@ -1,0 +1,12 @@
+old:
+    "node_modules/@eslint-community/eslint-utils": {
+      "version": "4.4.0",
+      "dependencies": {
+        "eslint-visitor-keys": "^3.3.0"
+      },
+new:
+    "node_modules/@eslint-community/eslint-utils": {
+      "version": "4.4.1",
+      "dependencies": {
+        "eslint-visitor-keys": "^3.4.3"
+      },
