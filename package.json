@@ -13,5 +13,10 @@
     "axios": "^1.7.7",
     "figlet": "^1.8.0",
     "one-liner-joke": "^1.2.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "eslint": "^9.15.0",
+    "globals": "^15.12.0"
   }
 }
