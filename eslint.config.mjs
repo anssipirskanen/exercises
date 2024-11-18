@@ -1,6 +1,8 @@
 
 import globals from "globals";
 import pluginJs from "@eslint/js";
+import prettierPlugin from "eslint-plugin-prettier";
+import prettierConfig from "eslint-config-prettier";
 
 export default [
   {
@@ -9,8 +11,11 @@ export default [
       sourceType: "commonjs",
       globals: globals.node, // Combine sourceType and globals in one object
     },
+    plugins: {
+      prettier: prettierPlugin,
+    },
     rules: {
-      // Add your custom rules here
+      // ESLint rules
       "no-var": "error", // Disallow use of var
       eqeqeq: "error", // Require strict equality (===)
       "no-unused-vars": "warn", // Warn on unused variables
@@ -20,7 +25,11 @@ export default [
       "no-multiple-empty-lines": ["error", { max: 1 }], // Limit multiple empty lines
       camelcase: "error", // Enforce camelCase naming
       "no-eval": "error", // Disallow eval()
+
+      // Prettier rule integration
+      "prettier/prettier": "error",
     },
   },
   pluginJs.configs.recommended,
+  prettierConfig,
 ];
