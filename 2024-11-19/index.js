@@ -54,3 +54,41 @@ multiply.showDetails();
 
 //d) Callbacks
 
+function isPositiveInteger(value, onSuccess, onError) {
+  if (Number.isInteger(value) && value > 0) {
+    onSuccess();
+  } else {
+    onError();
+  }
+}
+
+function success() {
+  console.log("Positive integer.");
+}
+
+function error() {
+  console.log("Not a positive integer.");
+}
+
+isPositiveInteger(5, success, error);
+isPositiveInteger(-3, success, error);
+
+isPositiveInteger(
+  5,
+  function () {
+    console.log("Positive integer (anonymous).");
+  },
+  function () {
+    console.log("Not a positive integer (anonymous).");
+  },
+);
+
+isPositiveInteger(
+  -5,
+  () => {
+    console.log("Positive integer (arrow).");
+  },
+  () => {
+    console.log("Not a positive integer (arrow).");
+  },
+);
